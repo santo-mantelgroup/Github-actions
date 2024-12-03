@@ -10,3 +10,11 @@ jobs:
         run: npm ci 
       - name: Run tests
         run: npm test 
+  second-job:
+    needs: first-job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Lint
+        run: echo "linting job" 
+      - name: Build
+        run: echo "building job"
