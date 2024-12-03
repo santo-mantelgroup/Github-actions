@@ -1,0 +1,12 @@
+name: my-first-action
+on: push
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions:/checkout@v3
+      - name: Install dependancies 
+        uses: npm ci 
+      - name: Run tests
+        run: npm test 
